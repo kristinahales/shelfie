@@ -14,6 +14,8 @@ class Form extends Component {
         this.handleAddToInventory = this.handleAddToInventory.bind(this);
     }
 
+
+
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
@@ -25,7 +27,6 @@ class Form extends Component {
             product_name: '',
             price: 0,
             image_url: '',
-            addimg: ''
         })
     }
 
@@ -42,12 +43,14 @@ class Form extends Component {
         const {product_name, price, image_url} = this.state
         return (
             <div>
-                <div className='product-preview'></div>
-                <div><label>Image URL:</label><input name='image_url' value={image_url} onChange={this.handleChange} height='200px' width='300px'/></div>
-                <div><label>Product Name:</label><input name='product_name' value={product_name} onChange={this.handleChange}/></div>
-                <div><label>Price:</label><input name='price' value={price} onChange={this.handleChange}/></div>
-                <button onClick={this.resetInput}>Cancel</button>
-                <button onClick={this.handleAddToInventory}>Add to Inventory</button>
+                <div className='product-preview'>
+                    <img src={image_url} height='200px' width='300px'/>
+                    <div><label>Image URL:</label><input name='image_url' value={image_url} onChange={this.handleChange} height='200px' width='300px'/></div>
+                    <div><label>Product Name:</label><input name='product_name' value={product_name} onChange={this.handleChange}/></div>
+                    <div><label>Price:</label><input name='price' value={price} onChange={this.handleChange}/></div>
+                    <button onClick={this.resetInput}>Cancel</button>
+                    <button onClick={this.handleAddToInventory}>Add to Inventory</button>
+                </div>
             </div>
         )
     }
