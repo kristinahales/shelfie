@@ -35,13 +35,14 @@ module.exports = {
         const db = req.app.get('db');
         const {params, query} = req;
     
-        db.update_products([params.id, query.price])
+        db.update_product([params.id, query.image_url, query.product_name, query.price])
         .then(products => res.status(200).send(products))
         .catch(err => {
             res.status(500).send({errorMessage: "Ooops! Something went wrong. Our engineers have been informed!"})
             console.log(err)
         })
     },
+
 
     
 }

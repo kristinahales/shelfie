@@ -11,7 +11,8 @@ class Dashboard extends Component {
                             <Product 
                             key={product.product_id}
                             product={product}
-                            deleteProduct={this.props.deleteProduct}/>
+                            deleteProduct={this.props.deleteProduct}
+                            />
                         )
                     })
                 }

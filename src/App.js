@@ -15,7 +15,6 @@ class App extends Component {
     }
     this.createProduct = this.createProduct.bind(this);
     this.deleteProduct = this.deleteProduct.bind(this);
-
   }
 
   componentDidMount() {
@@ -46,18 +45,18 @@ class App extends Component {
     })
   }
 
-
-  
   render() {
     return (
       <div>
         <Header />
+        
           <div className='main-container'>
             <Dashboard inventory={this.state.inventory} deleteProduct={this.deleteProduct}/>
-            <Form createProduct={this.createProduct}
-                                />
+            <Form createProduct={this.createProduct}/>
+                              
           </div>
       </div>
+    
     );
   }
 

@@ -23,6 +23,6 @@ massive(CONNECTION_STRING)
 app.get('/api/products', ctrl.getAll);
 app.post('/api/products', ctrl.create);
 app.delete('/api/products/:id', ctrl.delete);
-app.put('/api/products', ctrl.update);
+app.put('/api/products/:id', ctrl.update);
 
 
