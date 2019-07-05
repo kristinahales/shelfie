@@ -1,0 +1,15 @@
+.main-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.product-preview {
+    background: #3AD886;
+    height: 400px;
+    width: 300px;
+}
+
+.outline {
+    border: 1px solid black;
+}

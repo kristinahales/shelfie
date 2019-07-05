@@ -1,0 +1,14 @@
+.header_container {
+    display: flex;
+    align-items: center;
+    background: #AB2A19;
+    width: 100vw;
+    height:80px;
+}
+
+.header_text {
+    font-size: 30px;
+    margin-left: 35px;
+    color: white;
+    font-weight: bold;
+}
