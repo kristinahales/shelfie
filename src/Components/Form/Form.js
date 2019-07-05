@@ -8,7 +8,7 @@ class Form extends Component {
             product_name: '',
             price: 0,
             image_url: '',
-            editing: false
+
         }
         this.handleChange = this.handleChange.bind(this);
         this.resetInput = this.resetInput.bind(this);
@@ -56,7 +56,7 @@ class Form extends Component {
                     
                     <label>Price:</label>
                     <div><input name='price' value={price} onChange={this.handleChange}/></div>
-                    
+
                     <button className='buttons' onClick={this.resetInput}>Cancel</button>
                     <button className='buttons' onClick={this.handleAddToInventory}>Add to Inventory</button>
                 </div>
