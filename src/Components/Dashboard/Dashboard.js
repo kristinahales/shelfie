@@ -5,8 +5,18 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <Product />
-                Dashboard
+                {
+                    this.props.inventory.map(product => {
+                        return (
+                            <Product 
+                            key={product.product_id}
+                            product={product}
+                            deleteProduct={this.props.deleteProduct}/>
+                        )
+                    })
+                }
+               
+                
             </div>
         )
     }

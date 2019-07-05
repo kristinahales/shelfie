@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
+import './Form.css'
 
 class Form extends Component {
     constructor() {
         super()
         this.state = {
-            name: '',
+            product_name: '',
             price: 0,
-            imgurl: ''
+            image_url: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.resetInput = this.resetInput.bind(this);
+        this.handleAddToInventory = this.handleAddToInventory.bind(this);
     }
 
     handleChange(e) {
@@ -20,20 +22,32 @@ class Form extends Component {
 
     resetInput() {
         this.setState({
-            name: '',
+            product_name: '',
             price: 0,
-            imgurl: ''
+            image_url: '',
+            addimg: ''
         })
     }
+
+    handleAddToInventory() {
+        this.props.createProduct({
+            product_name: this.state.product_name,
+            image_url: this.state.image_url, 
+            price: this.state.price
+        })
+        this.resetInput();
+        
+    }
     render() {
-        const {name, price, imgurl} = this.state
+        const {product_name, price, image_url} = this.state
         return (
             <div>
-                <div><label>Image URL:</label><input name='imgurl' value={imgurl} onChange={this.handleChange}/></div>
-                <div><label>Product Name:</label><input name='name' value={name} onChange={this.handleChange}/></div>
+                <div className='product-preview'></div>
+                <div><label>Image URL:</label><input name='image_url' value={image_url} onChange={this.handleChange} height='200px' width='300px'/></div>
+                <div><label>Product Name:</label><input name='product_name' value={product_name} onChange={this.handleChange}/></div>
                 <div><label>Price:</label><input name='price' value={price} onChange={this.handleChange}/></div>
                 <button onClick={this.resetInput}>Cancel</button>
-                <button>Add</button>
+                <button onClick={this.handleAddToInventory}>Add to Inventory</button>
             </div>
         )
     }
