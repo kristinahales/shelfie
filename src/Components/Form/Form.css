@@ -10,6 +10,18 @@
     width: 300px;
 }
 
+.product-preview input, label {
+    margin-left: 70px;
+}
+
 .outline {
     border: 1px solid black;
+}
+
+.buttons {
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+
 }

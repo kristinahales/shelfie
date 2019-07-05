@@ -28,6 +28,7 @@ class Form extends Component {
             product_name: '',
             price: 0,
             image_url: '',
+            
         })
     }
 
@@ -45,13 +46,19 @@ class Form extends Component {
         return (
             <div className='main-container'>
                 <div className='product-preview'>
+
+                    <img classname='outline' src={image_url} height='200px' width='300px' />
+                    <label>Image URL:</label>
+                    <div><input name='image_url' value={image_url} onChange={this.handleChange} height='200px' width='300px'/></div>
                     
-                    <img classname='outline' onerror='' src={image_url} height='200px' width='300px' />
-                    <div><label>Image URL:</label><input name='image_url' value={image_url} onChange={this.handleChange} height='200px' width='300px'/></div>
-                    <div><label>Product Name:</label><input name='product_name' value={product_name} onChange={this.handleChange}/></div>
-                    <div><label>Price:</label><input name='price' value={price} onChange={this.handleChange}/></div>
-                    <button onClick={this.resetInput}>Cancel</button>
-                    <button onClick={this.handleAddToInventory}>Add to Inventory</button>
+                    <label>Product Name:</label>
+                    <div><input name='product_name' value={product_name} onChange={this.handleChange}/></div>
+                    
+                    <label>Price:</label>
+                    <div><input name='price' value={price} onChange={this.handleChange}/></div>
+                    
+                    <button className='buttons' onClick={this.resetInput}>Cancel</button>
+                    <button className='buttons' onClick={this.handleAddToInventory}>Add to Inventory</button>
                 </div>
             </div>
         )
