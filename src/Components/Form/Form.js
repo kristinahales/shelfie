@@ -7,7 +7,8 @@ class Form extends Component {
         this.state = {
             product_name: '',
             price: 0,
-            image_url: ''
+            image_url: '',
+            editing: false
         }
         this.handleChange = this.handleChange.bind(this);
         this.resetInput = this.resetInput.bind(this);
@@ -42,9 +43,10 @@ class Form extends Component {
     render() {
         const {product_name, price, image_url} = this.state
         return (
-            <div>
+            <div className='main-container'>
                 <div className='product-preview'>
-                    <img src={image_url} height='200px' width='300px'/>
+                    
+                    <img classname='outline' onerror='' src={image_url} height='200px' width='300px' />
                     <div><label>Image URL:</label><input name='image_url' value={image_url} onChange={this.handleChange} height='200px' width='300px'/></div>
                     <div><label>Product Name:</label><input name='product_name' value={product_name} onChange={this.handleChange}/></div>
                     <div><label>Price:</label><input name='price' value={price} onChange={this.handleChange}/></div>
